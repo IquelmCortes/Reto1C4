@@ -1,0 +1,7 @@
+com\example\demo\DemoApplication.class
+com\example\demo\persistence\repository\UserRepository.class
+com\example\demo\persistence\entities\Usuarios.class
+com\example\demo\controllers\UserController.class
+com\example\demo\services\EntityService.class
+com\example\demo\controllers\EntityController.class
+com\example\demo\services\UserService.class
