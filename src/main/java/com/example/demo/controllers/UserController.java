@@ -37,8 +37,8 @@ public class UserController {
     }
     
     @GetMapping(path = "{email}/{password}")
-    public List getExistencia(@PathVariable("email") String email, @PathVariable("password") String password){
-        List<Usuarios> users = UsuarioService.ExisteUsuario(email, password);
+    public Usuarios getExistencia(@PathVariable("email") String email, @PathVariable("password") String password){
+        Usuarios users = UsuarioService.ExisteUsuario(email, password);
         return users;
     }
 }
