@@ -11,12 +11,12 @@ public class Usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
-    private String name;
     @Column(unique = true)
     private String email;
     @Column
     private String password;
+    @Column
+    private String name;
 
     /**
      * @param email
