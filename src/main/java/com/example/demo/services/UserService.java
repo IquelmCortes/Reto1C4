@@ -48,16 +48,20 @@ public class UserService implements EntityService<Usuarios>{
             return respuesta;
     }
     
-    public List<Usuarios> ExisteUsuario(String email, String password){
+    public Usuarios ExisteUsuario(String email, String password){
         List<Usuarios> users = userRepository.findAll();
-        ArrayList<Usuarios> usersToSend = new ArrayList<>();
+        Usuarios usersToSend = new Usuarios();
         users.forEach(
                 user ->{
                     if(user.getEmail().equals(email) && user.getPassword().equals(password)){
-                        usersToSend.add(user);
+                        usersToSend.setId(user.getId());
+                        usersToSend.setName(user.getName());
+                        usersToSend.setEmail(user.getEmail());
+                        usersToSend.setPassword(user.getPassword());
                     }else{
-                        Usuarios usuarionuevo = new Usuarios("NO DEFINIDO", email, password);
-                        usersToSend.add(usuarionuevo);
+                        usersToSend.setName("NO DEFINIDO");
+                        usersToSend.setEmail(email);
+                        usersToSend.setPassword(password);
                     }
                 }
         );
